@@ -25,28 +25,28 @@ describe 'Pages' do
   end
   
   
-  describe 'profile page' do
-    
-    before :each do
-      user = FactoryGirl.create(:user)
-      
-      visit new_user_session_path
-      fill_in 'user_email', with: user.email
-      fill_in 'user_password', with: user.password
-      click_on 'Sign in'
-      expect(page).to have_content("Signed in as #{user.email}")
-    end
-    
+  describe 'profile page' do    
     describe 'when user has a plan' do
-      it 'should show number of Days' do
-        pending
+      before :each do
+        @user = FactoryGirl.create(:user, :with_plan)
+      
+        visit new_user_session_path
+        fill_in 'user_email', with: @user.email
+        fill_in 'user_password', with: @user.password
+        click_on 'Sign in'
       end
-    
-   
+      
+      it 'should show number of Days' do
+        visit pages_profile_path
+        
+        expect(page).to have_content('0/30Days')
+      end
+
       it 'should show a saved plan text' do
         visit pages_profile_path
       
         expect(page).to have_css('#savedPlanText')
+        expect(page).to have_content(@user.plan)
       end
     
       it 'should show a yes/no buttons' do
@@ -57,10 +57,18 @@ describe 'Pages' do
     end
     
     describe 'when user has no plan' do
+      before :each do
+        user = FactoryGirl.create(:user, :without_plan)
+      
+        visit new_user_session_path
+        fill_in 'user_email', with: user.email
+        fill_in 'user_password', with: user.password
+        click_on 'Sign in'
+      end
       
       it 'should show what text' do
         visit pages_profile_path
-        save_and_open_page
+        
         expect(page).to have_css('.whatText')
       end
       
