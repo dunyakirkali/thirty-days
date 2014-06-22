@@ -1,4 +1,4 @@
-h1 Pages#welcome
+h1 Welcome
 p Find me in app/views/pages/welcome.html.slim
 
-button.sign-up-button Sign up
+= link_to "Sign in", user_omniauth_authorize_path(:google_oauth2), class: 'sign-up-button'
