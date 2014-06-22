@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
     !plan.blank? 
   end
   
+  def successfull_days
+    progress.count(true)
+  end
+  
   def days_since
     (DateTime.now - began_at.to_date).to_i
   end
