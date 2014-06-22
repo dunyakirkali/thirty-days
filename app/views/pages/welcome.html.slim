@@ -1,8 +1,6 @@
-h1 Pages#welcome
+h1 Welcome
 div#logoImage
   img src='http://lorempixel.com/400/200'
 p.introText
 
-
-
-button.sign-up-button Sign up
+= link_to "Sign in", user_omniauth_authorize_path(:google_oauth2), class: 'sign-up-button'
