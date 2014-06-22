@@ -1153,13 +1153,13 @@ $topbar-height: 60px;
 
 // Set the link colors and styles for top-level nav
 $topbar-link-color: $blue;
-// $topbar-link-color-hover: #fff;
+$topbar-link-color-hover: $dark-blue;
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg-hover: #272727;
+$topbar-link-bg-hover: #F1F6F7;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
