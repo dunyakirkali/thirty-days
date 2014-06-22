@@ -8,6 +8,14 @@ class User < ActiveRecord::Base
     self.progress[days_since]
   end
   
+  def success_percentage
+    if days_since == 0
+      0
+    else
+      successfull_days.to_f / days_since * 100.0
+    end
+  end
+  
   def send_reminder
     UserMailer.reminder_email(self).deliver
   end

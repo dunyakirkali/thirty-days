@@ -41,7 +41,7 @@
 // $total-columns: 12;
 
 // We use these to control various global styles
-$body-bg: $third-color;
+$body-bg: $grey;
 $body-font-color: $first-color;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
@@ -56,9 +56,9 @@ $body-font-color: $first-color;
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: $dark-blue;
 // $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
+$alert-color: #F95647;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
@@ -121,7 +121,7 @@ $body-font-color: $first-color;
 // $header-font-family: $body-font-family;
 // $header-font-weight: normal;
 // $header-font-style: normal;
-// $header-font-color: #222;
+$header-font-color: $blue;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -329,7 +329,7 @@ $body-font-color: $first-color;
 
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
-// $button-font-color: #fff;
+ $button-font-color: white;
 // $button-font-color-alt: #333;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
@@ -1131,7 +1131,7 @@ $body-font-color: $first-color;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: $second-color;
+$topbar-bg-color: white;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1152,7 +1152,7 @@ $topbar-height: 60px;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
+$topbar-link-color: $blue;
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;

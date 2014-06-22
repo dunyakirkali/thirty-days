@@ -2,20 +2,27 @@
   .columns.small-12
     h1.progress-header
       = current_user.days_since
-      |  / 30 Days
+      |  days since
+      br
+      = current_user.began_at.strftime("%B %d, %Y")
 .row
   .columns.small-12
-    p.progress-details= "#{current_user.successfull_days} successfull days"
+    p.progress-details.panel
+      | admire your
+      span.label
+        = number_to_percentage(current_user.success_percentage)
+      |  success or 
+      = link_to 'reset', plans_reset_path, class: 'label alert'
+      |  your goal
 .row
   .columns.small-12
     = text_field_tag 'plan', current_user.plan, id: 'savedPlanText', readonly: true
 .row
   .columns.small-12.small-centered
-    ul.button-group.even-3
-      li
-        = form_tag '/plans/success' do
-          = submit_tag 'Yes', class: "yesnoButtons button success #{ (current_user.today == 't') ? 'disabled' : '' }", disabled: (current_user.today == 't')
+    ul.button-group.even-2
       li
         = form_tag '/plans/fail' do
           = submit_tag 'No', class: "yesnoButtons button #{ (current_user.today == 't') ? '' : 'disabled' }", disabled: (current_user.today == 'f')
-      li= link_to 'Reset', plans_reset_path, class: 'button alert'
+      li
+        = form_tag '/plans/success' do
+          = submit_tag 'Yes', class: "yesnoButtons button success #{ (current_user.today == 't') ? 'disabled' : '' }", disabled: (current_user.today == 't')
