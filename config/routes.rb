@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   
   post 'plans/start', to: 'plan#start'
   post 'plans/success', to: 'plan#success'
+  get 'plans/reset', to: 'plan#reset'
   post 'plans/fail', to: 'plan#fail'
   
   authenticated :user do

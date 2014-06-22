@@ -12,7 +12,7 @@ div
     = submit_tag 'Yes', class: 'yesnoButtons'
   = form_tag '/plans/fail' do
     = submit_tag 'No', class: 'yesnoButtons'
-  
+  = link_to 'Reset', plans_reset_path
 - else
   p.whatText
     | Integer dui justo, rutrum sed sapien non, tempor faucibus lorem. Aenean aliquam ac neque ut pulvinar. Vivamus pretium turpis vestibulum, auctor nibh sit amet, ullamcorper lorem.

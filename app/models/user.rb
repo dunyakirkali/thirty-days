@@ -8,6 +8,14 @@ class User < ActiveRecord::Base
     UserMailer.reminder_email(self).deliver
   end
   
+  def reset
+    self.progress_will_change!
+    self.began_at = nil
+    self.progress = Array.new(30, 'f')
+    self.plan = nil
+    self.save
+  end
+  
   def has_plan?
     !plan.blank? 
   end
