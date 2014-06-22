@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def has_plan?
-    true 
+    !plan.blank? 
   end
   
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)

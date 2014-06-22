@@ -1,18 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe User, :type => :model do
+describe 'User' do
   
-  let!(:user) { FactoryGirl.create(:user) }
-  
-  it 'should have a plan if project plan is not nil' do
-    pending
+  it 'should not have a plan if project plan is nil' do
+    user = FactoryGirl.create(:user, plan: nil)
+    
+    expect(user.has_plan?).to eq(false)
   end
   
-  it 'should not have a plan if project plan is not nil' do
-    pending
-  end
-  
-  it 'should have progress' do
-    pending
+  it 'should not have a plan if project plan is nil' do
+    user = FactoryGirl.create(:user, plan: Faker::Lorem.paragraph)
+    
+    expect(user.has_plan?).to eq(true)
   end
 end

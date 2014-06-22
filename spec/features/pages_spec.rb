@@ -44,8 +44,7 @@ describe 'Pages' do
     
    
       it 'should show a saved plan text' do
-        visit pages_
-        profile_path
+        visit pages_profile_path
       
         expect(page).to have_css('#savedPlanText')
       end
@@ -57,7 +56,7 @@ describe 'Pages' do
       end
     end
     
-    describe 'when uhser has no plan' do
+    describe 'when user has no plan' do
       
       it 'should show what text' do
         visit pages_profile_path
