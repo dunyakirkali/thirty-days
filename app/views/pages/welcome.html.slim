@@ -1,6 +1,10 @@
-h1#logoText 30 Days 
-
-p.introText 
-  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-= link_to "Sign in", user_omniauth_authorize_path(:google_oauth2), class: 'sign-up-button'
-
+.row
+  .columns.small-12
+    h1#logoText 30 Days 
+.row
+  .columns.small-12
+    p.introText 
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+.row
+  .columns.small-12
+    = link_to "Sign in", user_omniauth_authorize_path(:google_oauth2), class: 'sign-up-button'
