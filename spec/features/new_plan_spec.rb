@@ -16,8 +16,8 @@ describe "New Plan" do
     
     fill_in 'plan', with: 'My plan is that ...'
     click_on 'OK'
-    
-    expect(page).to have_content('Plan Saved')
+    save_and_open_page
+    expect(page).to have_content('0/30Days')
   end
   
 end
