@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.1'
+ruby '2.1.0'
 
 gem 'rails', '4.1.1'
 gem 'pg'
@@ -14,8 +14,12 @@ gem 'spring',        group: :development
 gem 'rails_12factor', group: :production
 gem "slim-rails"
 gem 'foundation-rails'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'capybara'
+  gem 'factory_girl_rails'
 end
