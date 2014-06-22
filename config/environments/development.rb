@@ -36,4 +36,15 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
   GA.tracker = "UA-17049541-16"
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => '20458bb87f5280a77',
+    :password => '2e1683e12900df',
+    :address => 'mailtrap.io',
+    :domain => 'mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5,
+    :enable_starttls_auto => true
+  }
 end
