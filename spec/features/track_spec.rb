@@ -34,9 +34,9 @@ describe 'Tracking' do
       Timecop.freeze(DateTime.now + i.days) do
         visit pages_profile_path
         click_on 'Yes'
+        
+        expect(page).to have_content("#{i+1} successfull days :)")
       end
     end
-    
-    expect(user.successfull_days).to eq(10)
   end
 end

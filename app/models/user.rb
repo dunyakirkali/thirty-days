@@ -16,17 +16,19 @@ class User < ActiveRecord::Base
   end
   
   def successfull_days
-    progress.count(true)
+    progress.count('t')
   end
   
   def mark_success
+    self.progress_will_change!
     self.progress[days_since] = 't'
-    self.save!
+    self.save
   end
   
   def mark_fail
+    self.progress_will_change!
     self.progress[days_since] = 'f'
-    self.save!
+    self.save
   end
   
   def days_since
