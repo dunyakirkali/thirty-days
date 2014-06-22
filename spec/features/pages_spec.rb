@@ -37,7 +37,9 @@ describe 'Pages' do
       end
       
       it 'should show number of Days' do
-        pending
+        visit pages_profile_path
+        
+        expect(page).to have_content('0/30Days')
       end
 
       it 'should show a saved plan text' do
