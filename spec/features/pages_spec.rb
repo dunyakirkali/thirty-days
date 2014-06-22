@@ -50,15 +50,23 @@ describe 'Pages' do
       
       expect(page).to have_css('.planTextField')
     end
-    
-    it 'should show a yes/no buttons' do
+    it 'should show a ok button' do
       visit pages_profile_path
       
       expect(page).to have_css('#okButton') 
     end
     
+    it 'should show a saved plan text' do
+      visit pages_profile_path
+      
+      expect(page).to have_css('#savedPlanText')
+    end
     
-    
+    it 'should show a yes/no buttons' do
+      visit pages_profile_path
+      
+      expect(page).to have_css('.yesnoButtons', count:2)
+    end
   end
 
 end
