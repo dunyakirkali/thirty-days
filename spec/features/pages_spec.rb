@@ -4,6 +4,18 @@ describe 'Pages' do
   
   describe 'welcome page' do
     
+    it 'should show a div' do
+      visit root_path
+      
+      expect(page).to have_css('#logoImage')
+    end
+    
+    it 'should show a div' do
+      visit root_path
+      
+      expect(page).to have_css('.introText')
+    end 
+    
     it 'should show a sign up button' do
       visit root_path
       
@@ -26,6 +38,7 @@ describe 'Pages' do
       
       expect(page).to have_css('.submitButton')
     end
+    
     
   end
 
