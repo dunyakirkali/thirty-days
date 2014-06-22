@@ -4,6 +4,7 @@ div
 
 - if current_user.has_plan?
   h1 0/30Days
+  h2= "#{current_user.successfull_days} successfull days :)"
   p#savedPlanText= current_user.plan
   = form_tag '/plans/success' do
     = submit_tag 'Yes', class: 'yesnoButtons'
