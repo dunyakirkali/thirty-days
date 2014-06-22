@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :user do
     email                 { Faker::Internet.email }
     password              { Faker::Internet.password }
-    password_confirmation { |user| user.password } 
+    password_confirmation { |user| user.password }
     
     trait :with_plan do
       plan { Faker::Lorem.paragraph }

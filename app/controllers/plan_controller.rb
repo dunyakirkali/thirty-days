@@ -1,7 +1,6 @@
 class PlanController < ApplicationController
   def start
-    current_user.update_attribute(:began_at, DateTime.now)
-    current_user.update_attribute(:plan, params[:plan])
+    current_user.start(params[:plan])
     
     redirect_to pages_profile_path, notice: 'Plan Saved'
   end

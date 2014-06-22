@@ -8,18 +8,26 @@ class User < ActiveRecord::Base
     !plan.blank? 
   end
   
+  def start(plan)
+    self.began_at = DateTime.now
+    self.plan = plan
+    self.progress = Array.new(30, 'f')
+    self.save
+  end
+  
   def successfull_days
     progress.count(true)
   end
   
   def mark_success
-    self.progress[days_since] = true
-    self.save
+    self.progress[days_since] = 't'
+    puts progress
+    self.save!
   end
   
   def mark_fail
-    self.progress[days_since] = false
-    self.save
+    self.progress[days_since] = 'f'
+    self.save!
   end
   
   def days_since
