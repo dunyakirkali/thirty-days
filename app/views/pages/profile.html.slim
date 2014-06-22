@@ -7,9 +7,12 @@ div
   p#savedPlanText= current_user.plan
   = button_tag 'Yes', class: 'yesnoButtons'
   = button_tag 'No', class: 'yesnoButtons'
+  
 - else
   p.whatText
     | Integer dui justo, rutrum sed sapien non, tempor faucibus lorem. Aenean aliquam ac neque ut pulvinar. Vivamus pretium turpis vestibulum, auctor nibh sit amet, ullamcorper lorem.
     
-  = text_field_tag 'plan', "Tell us your plan...", class: 'planTextField'
-  = button_tag 'OK', id: 'submitButton'
+  = form_tag '/plans/start' do
+    = label_tag 'plan'
+    = text_field_tag 'plan', "Tell us your plan...", class: 'planTextField'
+    = submit_tag 'OK', id: 'submitButton'

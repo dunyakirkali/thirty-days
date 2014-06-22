@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   
   get 'pages/welcome'
   get 'pages/profile'
+  
+  post 'plans/start', to: 'plan#start'
 
   authenticated :user do
     root :to => "pages#profile", as: :authenticated_root
