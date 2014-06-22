@@ -3,7 +3,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
-
+  
+  def today
+    self.progress[days_since]
+  end
+  
   def send_reminder
     UserMailer.reminder_email(self).deliver
   end

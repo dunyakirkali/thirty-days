@@ -1,7 +1,9 @@
-p.whatText
-  | Integer dui justo, rutrum sed sapien non, tempor faucibus lorem. Aenean aliquam ac neque ut pulvinar. Vivamus pretium turpis vestibulum, auctor nibh sit amet, ullamcorper lorem.
-  
-= form_tag '/plans/start' do
-  = label_tag 'plan'
-  = text_field_tag 'plan', "Tell us your plan...", class: 'planTextField'
-  = submit_tag 'OK', id: 'submitButton', class: 'button'
+.row
+  .columns.small-12
+    p.whatText Integer dui justo, rutrum sed sapien non, tempor faucibus lorem. Aenean aliquam ac neque ut pulvinar. Vivamus pretium turpis vestibulum, auctor nibh sit amet, ullamcorper lorem.
+.row
+  .columns.small-12
+    = form_tag '/plans/start' do
+      = label_tag 'plan'
+      = text_field_tag 'plan', "Tell us your plan...", class: 'planTextField'
+      = submit_tag 'OK', id: 'submitButton', class: 'button'

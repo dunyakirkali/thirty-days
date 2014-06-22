@@ -7,15 +7,15 @@
   .columns.small-12
     p.progress-details= "#{current_user.successfull_days} successfull days"
 .row
-  .columns.small-12.small-push-0.medium-6.medium-push-3
+  .columns.small-12
     = text_field_tag 'plan', current_user.plan, id: 'savedPlanText', readonly: true
 .row
-  .columns.small-12.small-uncentered.medium-6.medium-centered
-    ul.button-group
+  .columns.small-12.small-centered
+    ul.button-group.even-3
       li
         = form_tag '/plans/success' do
-          = submit_tag 'Yes', class: 'yesnoButtons button'
+          = submit_tag 'Yes', class: "yesnoButtons button success #{ (current_user.today == 't') ? 'disabled' : '' }", disabled: (current_user.today == 't')
       li
         = form_tag '/plans/fail' do
-          = submit_tag 'No', class: 'yesnoButtons button'
-      li= link_to 'Reset', plans_reset_path, class: 'button'
+          = submit_tag 'No', class: "yesnoButtons button #{ (current_user.today == 't') ? '' : 'disabled' }", disabled: (current_user.today == 'f')
+      li= link_to 'Reset', plans_reset_path, class: 'button alert'
