@@ -3,7 +3,7 @@ div
   = link_to "Sign out", destroy_user_session_path,:method => :delete
 
 - if current_user.has_plan?
-  p#savedPlanText Will quit smoking
+  p#savedPlanText= current_user.plan
   = button_tag 'Yes', class: 'yesnoButtons'
   = button_tag 'No', class: 'yesnoButtons'
 - else
