@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def send_reminder
+    UserMailer.reminder_email(self).deliver
+  end
+  
   def has_plan?
     !plan.blank? 
   end
