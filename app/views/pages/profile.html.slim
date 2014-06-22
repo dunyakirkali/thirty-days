@@ -3,11 +3,12 @@ div
   = link_to "Sign out", destroy_user_session_path,:method => :delete
 
 - if current_user.has_plan?
-  p.whatText
-    | Integer dui justo, rutrum sed sapien non, tempor faucibus lorem. Aenean aliquam ac neque ut pulvinar. Vivamus pretium turpis vestibulum, auctor nibh sit amet, ullamcorper lorem.
-  = text_field_tag 'plan', "Tell us your plan...", class: 'planTextField'
-  = button_tag 'OK', id: 'okButton'
-- else
   p#savedPlanText Will quit smoking
   = button_tag 'Yes', class: 'yesnoButtons'
   = button_tag 'No', class: 'yesnoButtons'
+- else
+  p.whatText
+    | Integer dui justo, rutrum sed sapien non, tempor faucibus lorem. Aenean aliquam ac neque ut pulvinar. Vivamus pretium turpis vestibulum, auctor nibh sit amet, ullamcorper lorem.
+    
+  = text_field_tag 'plan', "Tell us your plan...", nil, class: 'planTextField'
+  = button_tag 'OK', id: 'submitButton'

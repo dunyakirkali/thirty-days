@@ -37,45 +37,45 @@ describe 'Pages' do
       expect(page).to have_content("Signed in as #{user.email}")
     end
     
-    it 'should show a input' do
-      visit pages_profile_path
+    describe 'when user has a plan' do
+      it 'should show number of Days' do
+        pending
+      end
+    
+   
+      it 'should show a saved plan text' do
+        visit pages_
+        profile_path
       
-      expect(page).to have_css('.textField')
+        expect(page).to have_css('#savedPlanText')
+      end
+    
+      it 'should show a yes/no buttons' do
+        visit pages_profile_path
+      
+        expect(page).to have_css('.yesnoButtons', count:2)
+      end
     end
     
-    it 'should show a submit button' do
-      visit pages_profile_path
+    describe 'when uhser has no plan' do
       
-      expect(page).to have_css('.submitButton')
-    end
-    
-    it 'should show number of Days' do
-      visit pages_profile_path
+      it 'should show what text' do
+        visit pages_profile_path
+        save_and_open_page
+        expect(page).to have_css('.whatText')
+      end
       
-      expect(page).to have_css('.whatText')
-    end
-    
-    it 'should show a plan text input' do
-      visit pages_profile_path
+      it 'should show a plan text input' do
+        visit pages_profile_path
       
-      expect(page).to have_css('.planTextField')
-    end
-    it 'should show a ok button' do
-      visit pages_profile_path
+        expect(page).to have_css('.planTextField')
+      end
       
-      expect(page).to have_css('#okButton') 
-    end
-    
-    it 'should show a saved plan text' do
-      visit pages_profile_path
+      it 'should show a submit button' do
+        visit pages_profile_path
       
-      expect(page).to have_css('#savedPlanText')
-    end
-    
-    it 'should show a yes/no buttons' do
-      visit pages_profile_path
-      
-      expect(page).to have_css('.yesnoButtons', count:2)
+        expect(page).to have_css('#submitButton')
+      end
     end
   end
 
