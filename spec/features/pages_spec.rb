@@ -26,7 +26,9 @@ describe 'Pages' do
   
   
   describe 'profile page' do
-    
+    before :each do
+      pending
+    end    
     describe 'user without ongoing plan' do
       
       it 'should show a plan text input' do
@@ -59,12 +61,8 @@ describe 'Pages' do
       it 'should show a yes/no buttons' do
         visit pages_profile_path
       
-        expect(page).to have_css('.yesnoButtons', count:2)
+        expect(page).to have_css('.yesnoButtons', count: 2)
       end      
-      
-      it 'should show number of days passed' do
-        pending
-      end
     end                
   end
 end
