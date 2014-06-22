@@ -62,7 +62,7 @@ describe 'Pages' do
         visit pages_profile_path
       
         expect(page).to have_css('.yesnoButtons', count: 2)
-      end      
+      end
     end                
   end
 end
