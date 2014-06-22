@@ -9,4 +9,5 @@ nav.top-bar data-topbar=true
   section.top-bar-section
     - if current_user
       ul.right
+        li= link_to current_user.email, '#'
         li= link_to "Sign out", destroy_user_session_path, :method => :delete

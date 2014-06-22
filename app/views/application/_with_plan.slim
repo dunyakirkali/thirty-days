@@ -1,10 +1,21 @@
-h1 
-  = current_user.days_since
-  | /30Days
-h3= "#{current_user.successfull_days} successfull days :)"
-p#savedPlanText= current_user.plan
-= link_to 'Reset', plans_reset_path, class: 'button'
-= form_tag '/plans/success' do
-  = submit_tag 'Yes', class: 'yesnoButtons button'
-= form_tag '/plans/fail' do
-  = submit_tag 'No', class: 'yesnoButtons button'
+.row
+  .columns.small-12
+    h1.progress-header
+      = current_user.days_since
+      |  / 30 Days
+.row
+  .columns.small-12
+    p.progress-details= "#{current_user.successfull_days} successfull days"
+.row
+  .columns.small-12.small-push-0.medium-6.medium-push-3
+    = text_field_tag 'plan', current_user.plan, id: 'savedPlanText', readonly: true
+.row
+  .columns.small-12.small-uncentered.medium-6.medium-centered
+    ul.button-group
+      li
+        = form_tag '/plans/success' do
+          = submit_tag 'Yes', class: 'yesnoButtons button'
+      li
+        = form_tag '/plans/fail' do
+          = submit_tag 'No', class: 'yesnoButtons button'
+      li= link_to 'Reset', plans_reset_path, class: 'button'

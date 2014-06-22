@@ -1,8 +1,4 @@
 .row
-  .columns.small-12
-    p
-      | Welcome #{current_user.email}
-.row
   .columns
     - if current_user.has_plan?
       = render 'with_plan'
