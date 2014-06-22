@@ -7,7 +7,7 @@
       = current_user.began_at.strftime("%B %d, %Y")
 .row
   .columns.small-12
-    p.progress-details.panel
+    p.progress-details
       | admire your
       span.label
         = number_to_percentage(current_user.success_percentage)
@@ -16,11 +16,12 @@
       |  your goal
 .row
   .columns.small-12
-    = text_field_tag 'plan', current_user.plan, id: 'savedPlanText', readonly: true
+    p.panel#savedPlanText
+      = current_user.plan
 .row
   .columns.small-12.small-centered.medium-6.medium-centered
     ul.button-group.even-2
       li
         = link_to 'No', '/plans/fail', class: "yesnoButtons alert button", disabled: (current_user.today == 'f')
       li
-        = link_to 'Yes', '/plans/success', class: "yesnoButtons button success", disabled: (current_user.today == 'f')
+        = link_to 'Yes', '/plans/success', class: "yesnoButtons button success", disabled: (current_user.today == 't')
