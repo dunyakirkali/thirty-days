@@ -9,7 +9,7 @@ describe 'Tracking' do
     click_on 'Sign in'
     click_on 'Yes'
     
-    expect(page).to have_content('Progress saved')
+    expect(page).to have_content("1 successfull days :)")
     expect(user.progress).to eq(1)
   end
   
@@ -21,7 +21,7 @@ describe 'Tracking' do
     click_on 'Sign in'
     click_on 'No'
     
-    expect(page).to have_content('Progress saved')
+    expect(page).to have_content("0 successfull days :)")
     expect(user.progress).to eq(0)
   end
   

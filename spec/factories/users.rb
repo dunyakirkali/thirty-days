@@ -6,6 +6,7 @@ FactoryGirl.define do
     
     trait :with_plan do
       plan { Faker::Lorem.paragraph }
+      began_at { DateTime.now }
       progress Array.new(30, false)
     end
     
