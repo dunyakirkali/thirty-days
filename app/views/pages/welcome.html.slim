@@ -6,5 +6,5 @@
     p.introText 
       | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
 .row
-  .columns.small-12
-    = link_to "Sign in", user_omniauth_authorize_path(:google_oauth2), class: 'sign-up-button button'
+  .columns.small-12.sign-up-button
+    = link_to "Sign in", user_omniauth_authorize_path(:google_oauth2), class: 'button'
