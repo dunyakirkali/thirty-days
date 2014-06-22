@@ -15,6 +15,8 @@ gem 'rails_12factor', group: :production
 gem "slim-rails"
 gem 'foundation-rails'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
