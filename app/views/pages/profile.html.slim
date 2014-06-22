@@ -1,17 +1,13 @@
+div
+  p= "Signed in as #{current_user.email}. Not you?"
+  = link_to "Sign out", destroy_user_session_path,:method => :delete
 
-input.textField
+div
+  .whatText
+  input.planTextField type="text"
+  button#okButton
 
-button.submitButton
-
-
-.whatText
-
-input.planTextField type="text"
-
-button#okButton
-
-
-#savedPlanText
-
-button.yesnoButtons value="Yes"
-button.yesnoButtons value="No"
+div
+  #savedPlanText
+  button.yesnoButtons value="Yes"
+  button.yesnoButtons value="No"
