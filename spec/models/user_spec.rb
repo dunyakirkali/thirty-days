@@ -26,5 +26,11 @@ describe 'User' do
       
       expect(user.progress.count(true)).to eq(0)
     end
+    
+    it 'should calculate days since' do
+      user = FactoryGirl.create(:user, :with_plan, began_at: 2.days.ago)
+      
+      expect(user.days_since).to eq(2)
+    end
   end
 end
