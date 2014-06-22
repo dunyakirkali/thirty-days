@@ -21,7 +21,6 @@ class User < ActiveRecord::Base
   
   def mark_success
     self.progress[days_since] = 't'
-    puts progress
     self.save!
   end
   
