@@ -15,7 +15,7 @@ describe "Plan" do
       fill_in 'plan', with: 'My plan is that ...'
       click_on 'OK'
     
-      expect(page).to have_content('0/30Days')
+      expect(page).to have_content('0 / 30 Days')
     end  
   end
     
