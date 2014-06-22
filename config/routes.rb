@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   get 'pages/profile'
   
   post 'plans/start', to: 'plan#start'
-  post 'plans/success', to: 'plan#success'
+  get 'plans/success', to: 'plan#success'
   get 'plans/reset', to: 'plan#reset'
-  post 'plans/fail', to: 'plan#fail'
+  get 'plans/fail', to: 'plan#fail'
   
   authenticated :user do
     root :to => "pages#profile", as: :authenticated_root

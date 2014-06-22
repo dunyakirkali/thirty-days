@@ -21,8 +21,6 @@
   .columns.small-12.small-centered.medium-6.medium-centered
     ul.button-group.even-2
       li
-        = form_tag '/plans/fail' do
-          = submit_tag 'No', class: "yesnoButtons button #{ (current_user.today == 't') ? '' : 'disabled' }", disabled: (current_user.today == 'f')
+        = link_to 'No', '/plans/fail', class: "yesnoButtons button", disabled: (current_user.today == 'f')
       li
-        = form_tag '/plans/success' do
-          = submit_tag 'Yes', class: "yesnoButtons button success #{ (current_user.today == 't') ? 'disabled' : '' }", disabled: (current_user.today == 't')
+        = link_to 'Yes', '/plans/success', class: "yesnoButtons button success", disabled: (current_user.today == 'f')
