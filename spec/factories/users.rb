@@ -6,10 +6,12 @@ FactoryGirl.define do
     
     trait :with_plan do
       plan { Faker::Lorem.paragraph }
+      progress Array.new(30, false)
     end
     
     trait :without_plan do
       plan nil
+      progress nil
     end
   end
 end

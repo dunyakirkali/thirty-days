@@ -18,6 +18,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'google-analytics-rails'
+gem 'foreman'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
