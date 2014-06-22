@@ -1,0 +1,10 @@
+h1 
+  = current_user.days_since
+  | /30Days
+h3= "#{current_user.successfull_days} successfull days :)"
+p#savedPlanText= current_user.plan
+= link_to 'Reset', plans_reset_path
+= form_tag '/plans/success' do
+  = submit_tag 'Yes', class: 'yesnoButtons'
+= form_tag '/plans/fail' do
+  = submit_tag 'No', class: 'yesnoButtons'

@@ -1,23 +1,11 @@
-div
-  p= "Signed in as #{current_user.email}. Not you?"
-  = link_to "Sign out", destroy_user_session_path,:method => :delete
-
-- if current_user.has_plan?
-  h1 
-    = current_user.days_since
-    | /30Days
-  h2= "#{current_user.successfull_days} successfull days :)"
-  p#savedPlanText= current_user.plan
-  = form_tag '/plans/success' do
-    = submit_tag 'Yes', class: 'yesnoButtons'
-  = form_tag '/plans/fail' do
-    = submit_tag 'No', class: 'yesnoButtons'
-  = link_to 'Reset', plans_reset_path
-- else
-  p.whatText
-    | Integer dui justo, rutrum sed sapien non, tempor faucibus lorem. Aenean aliquam ac neque ut pulvinar. Vivamus pretium turpis vestibulum, auctor nibh sit amet, ullamcorper lorem.
-    
-  = form_tag '/plans/start' do
-    = label_tag 'plan'
-    = text_field_tag 'plan', "Tell us your plan...", class: 'planTextField'
-    = submit_tag 'OK', id: 'submitButton'
+.row
+  .columns.small-12
+    p
+      | Signed in as #{current_user.email}. Not you? 
+      = link_to "Sign out", destroy_user_session_path,:method => :delete
+.row
+  .columns
+    - if current_user.has_plan?
+      = render 'with_plan'
+    - else
+      = render 'without_plan'
