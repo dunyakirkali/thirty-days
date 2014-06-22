@@ -12,6 +12,16 @@ class User < ActiveRecord::Base
     progress.count(true)
   end
   
+  def mark_success
+    self.progress[days_since] = true
+    self.save
+  end
+  
+  def mark_fail
+    self.progress[days_since] = false
+    self.save
+  end
+  
   def days_since
     (DateTime.now - began_at.to_date).to_i
   end

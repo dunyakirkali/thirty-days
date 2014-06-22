@@ -5,8 +5,10 @@ div
 - if current_user.has_plan?
   h1 0/30Days
   p#savedPlanText= current_user.plan
-  = button_tag 'Yes', class: 'yesnoButtons'
-  = button_tag 'No', class: 'yesnoButtons'
+  = form_tag '/plans/success' do
+    = submit_tag 'Yes', class: 'yesnoButtons'
+  = form_tag '/plans/fail' do
+    = submit_tag 'No', class: 'yesnoButtons'
   
 - else
   p.whatText
