@@ -21,6 +21,6 @@
   .columns.small-12.small-centered.medium-6.medium-centered
     ul.button-group.even-2
       li
-        = link_to 'No', '/plans/fail', class: "yesnoButtons button", disabled: (current_user.today == 'f')
+        = link_to 'No', '/plans/fail', class: "yesnoButtons alert button", disabled: (current_user.today == 'f')
       li
         = link_to 'Yes', '/plans/success', class: "yesnoButtons button success", disabled: (current_user.today == 'f')
