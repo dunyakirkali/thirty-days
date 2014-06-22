@@ -39,6 +39,25 @@ describe 'Pages' do
       expect(page).to have_css('.submitButton')
     end
     
+    it 'should show number of Days' do
+      visit pages_profile_path
+      
+      expect(page).to have_css('.whatText')
+    end
+    
+    it 'should show a plan text input' do
+      visit pages_profile_path
+      
+      expect(page).to have_css('.planTextField')
+    end
+    
+    it 'should show a yes/no buttons' do
+      visit pages_profile_path
+      
+      expect(page).to have_css('#okButton') 
+    end
+    
+    
     
   end
 
