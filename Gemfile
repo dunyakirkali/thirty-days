@@ -17,6 +17,7 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'google-analytics-rails'
 gem 'foreman'
 
 group :development, :test do
