@@ -9,5 +9,6 @@ html
     = analytics_init :local => Rails.env.development?
     = csrf_meta_tags
   body
+    = render 'navigation'
     = yield
     
