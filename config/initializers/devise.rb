@@ -256,7 +256,6 @@ Devise.setup do |config|
   
   require 'omniauth-google-oauth2'
   config.omniauth :google_oauth2, 
-    "268891560810-6o5uvvja24bn08gf0rdfgm5e7u5jnbb2.apps.googleusercontent.com",
-    "268891560810-6o5uvvja24bn08gf0rdfgm5e7u5jnbb2@developer.gserviceaccount.com",
-    { access_type: "offline", approval_prompt: "" }
+    "268891560810-cbpljujub9dqadm6qi1av5fcdg3854n1.apps.googleusercontent.com",
+    "JcZTSIH7PLJ7uLZ1VKuwuWDh"
 end

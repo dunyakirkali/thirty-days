@@ -8,7 +8,6 @@ describe 'root' do
   end
   
   it 'should route new user to welcome page' do
-    pending
     visit root_path
     
     expect(page).not_to have_content('Welcome')
