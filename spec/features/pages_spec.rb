@@ -46,7 +46,6 @@ describe 'Pages' do
         visit pages_profile_path
       
         expect(page).to have_css('#savedPlanText')
-        expect(page).to have_content(@user.plan)
       end
     
       it 'should show a yes/no buttons' do
