@@ -39,3 +39,4 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem "slim-rails"
 gem 'foundation-rails'
+gem 'devise'
