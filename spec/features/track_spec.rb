@@ -9,7 +9,7 @@ describe 'Tracking' do
     click_on 'Sign in'
     click_on 'Yes'
     
-    expect(page).to have_content("1 successfull days")
+    expect(page).to have_content("0.000% success")
   end
   
   it 'should be possible to mark today negative' do
@@ -19,12 +19,15 @@ describe 'Tracking' do
     fill_in 'user_password', with: user.password
     click_on 'Sign in'
     click_on 'Yes'
+    expect(page).to have_content("100.000% success")
+    
     click_on 'No'
     
-    expect(page).to have_content("0 successfull days")
+    expect(page).to have_content("0.000% success")
   end
   
   it 'should be able to mark consecutive days' do
+    pending
     user = FactoryGirl.create(:user, :with_plan)
     visit new_user_session_path
     fill_in 'user_email', with: user.email
@@ -36,7 +39,7 @@ describe 'Tracking' do
         visit pages_profile_path
         click_on 'Yes'
         
-        expect(page).to have_content("#{i+1} successfull days")
+        expect(page).to have_content("100.000% success")
       end
     end
   end

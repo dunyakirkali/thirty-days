@@ -18,7 +18,7 @@
   .columns.small-12
     = text_field_tag 'plan', current_user.plan, id: 'savedPlanText', readonly: true
 .row
-  .columns.small-12.small-centered
+  .columns.small-10.small-centered
     ul.button-group.even-2
       li
         = form_tag '/plans/fail' do

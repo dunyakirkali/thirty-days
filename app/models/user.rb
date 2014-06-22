@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   
   def success_percentage
     if days_since == 0
-      0
+      successfull_days.to_f * 100.0
     else
       successfull_days.to_f / days_since * 100.0
     end

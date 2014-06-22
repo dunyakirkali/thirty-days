@@ -15,7 +15,7 @@ describe "Plan" do
       fill_in 'plan', with: 'My plan is that ...'
       click_on 'OK'
     
-      expect(page).to have_content('0 / 30 Days')
+      expect(page).to have_content('0 days since')
     end  
   end
     
@@ -29,7 +29,7 @@ describe "Plan" do
     end
   
     it 'should be resettable' do
-      click_on 'Reset'
+      click_on 'reset'
     
       expect(page).to have_css('.whatText')
     end
