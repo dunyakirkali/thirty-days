@@ -1,8 +1,7 @@
 .row
   .columns.small-12
     p
-      | Signed in as #{current_user.email}. Not you? 
-      = link_to "Sign out", destroy_user_session_path,:method => :delete
+      | Welcome #{current_user.email}
 .row
   .columns
     - if current_user.has_plan?

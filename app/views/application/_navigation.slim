@@ -7,5 +7,6 @@ nav.top-bar data-topbar=true
         span Menu
 
   section.top-bar-section
-    ul.right
-      li= link_to "Sign in", user_omniauth_authorize_path(:google_oauth2), class: 'sign-up-button'
+    - if current_user
+      ul.right
+        li= link_to "Sign out", destroy_user_session_path, :method => :delete
