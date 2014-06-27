@@ -5,6 +5,4 @@ class UserMailer < ActionMailer::Base
     @user = user  
     mail(to: @user.email, subject: 'Did you do whot you should do')
   end
-  
-  
 end
