@@ -41,8 +41,8 @@ $rem-base: 10px;
 // $total-columns: 12;
 
 // We use these to control various global styles
-$body-bg: $grey;
-$body-font-color: $antrisit;
+$body-bg: $second-color;
+$body-font-color: $fifth-color;
 $body-font-family: "DISLECTIKA-NavidNuur";
 // $body-font-weight: normal;
 // $body-font-style: normal;
@@ -56,11 +56,11 @@ $body-font-family: "DISLECTIKA-NavidNuur";
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: $dark-blue;
+$primary-color: $third-color;
 // $secondary-color: #e7e7e7;
-$alert-color: #F95647;
-$success-color: #8CDC62;
-// $warning-color: #f08a24;
+$alert-color: scale-color($fifth-color, $lightness: 35%);
+$success-color: scale-color($first-color, $lightness: 35%);
+// $warning-color: scale-color($fifth-color, $lightness: 35%);
 // $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
@@ -121,7 +121,7 @@ $success-color: #8CDC62;
 // $header-font-family: $body-font-family;
 // $header-font-weight: normal;
 // $header-font-style: normal;
-$header-font-color: $blue;
+$header-font-color: $fifth-color;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -329,7 +329,7 @@ $header-font-color: $blue;
 
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
- $button-font-color: white;
+$button-font-color: white;
 // $button-font-color-alt: #333;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
@@ -485,10 +485,10 @@ $header-font-color: $blue;
 // $form-label-font-size: rem-calc(14);
 // $form-label-font-weight: normal;
 // $form-label-line-height: 1.5;
-// $form-label-font-color: scale-color(#000, $lightness: 30%);
+$form-label-font-color: $fifth-color;
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
-// $input-font-color: rgba(0,0,0,0.75);
+$input-font-color: $fifth-color;
 // $input-font-size: rem-calc(14);
 // $input-bg-color: #fff;
 // $input-focus-bg-color: scale-color(#fff, $lightness: -2%);
@@ -624,7 +624,7 @@ $header-font-color: $blue;
 // We use these to style the label text
 // $label-font-sizing: rem-calc(11);
 // $label-font-weight: normal;
-// $label-font-color: #333;
+$label-font-color: $fifth-color;
 // $label-font-color-alt: #fff;
 // $label-font-family: $body-font-family;
 
@@ -1131,11 +1131,11 @@ $header-font-color: $blue;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: white;
-$topbar-bg: $topbar-bg-color;
+// $topbar-bg-color: white;
+// $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-$topbar-height: 60px;
+// $topbar-height: 60px;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
@@ -1143,7 +1143,7 @@ $topbar-height: 60px;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: #fff;
+// $topbar-dropdown-bg: #fff;
 // $topbar-dropdown-link-color: #fff;
 // $topbar-dropdown-link-bg: #333;
 // $topbar-dropdown-link-weight: normal;
@@ -1152,14 +1152,14 @@ $topbar-dropdown-bg: #fff;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: $blue;
-$topbar-link-color-hover: $dark-blue;
+// $topbar-link-color: $blue;
+// $topbar-link-color-hover: $dark-blue;
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-$topbar-link-bg-hover: #F1F6F7;
+// $topbar-link-bg-hover: #F1F6F7;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
@@ -1180,9 +1180,9 @@ $topbar-link-bg-hover: #F1F6F7;
 // $topbar-menu-link-font-size: rem-calc(13);
 // $topbar-menu-link-weight: bold;
 // $topbar-menu-link-color: #000;
-$topbar-menu-icon-color: $blue;
+// $topbar-menu-icon-color: $blue;
 // $topbar-menu-link-color-toggled: #888;
-$topbar-menu-icon-color-toggled: $dark-blue;
+// $topbar-menu-icon-color-toggled: $dark-blue;
 
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
