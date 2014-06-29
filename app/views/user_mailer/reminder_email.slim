@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title ThirtyDays Reminder
+    title= t('site.title', number_of_days: ENV['NUMBER_OF_DAYS'])
     meta name="viewport" content="width=device-width, initial-scale=1.0"
   body
     p
