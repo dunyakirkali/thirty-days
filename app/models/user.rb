@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   end
   
   def send_reminder
-    UserMailer.reminder_email(self).deliver
+    UserMailer.reminder_email(self).deliver unless completed?
   end
   
   def reset
@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
   
   def has_plan?
     !plan.blank? 
+  end
+  
+  def completed?
+    days_since >= 30
   end
   
   def start(plan)
