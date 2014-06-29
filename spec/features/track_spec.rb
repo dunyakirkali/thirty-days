@@ -9,7 +9,8 @@ describe 'Tracking' do
     click_on 'Sign in'
     click_on 'Yes'
     
-    expect(page).to have_content("admire your 100.00% so far or 3.33% total success")
+    expect(page).to have_content("100.00% so far")
+    expect(page).to have_content("3.33% total success")
   end
   
   it 'should be possible to mark today negative' do
@@ -21,7 +22,8 @@ describe 'Tracking' do
     click_on 'Yes'
     click_on 'No'
     
-    expect(page).to have_content("admire your 0.00% so far or 0.00% total success")
+    expect(page).to have_content("0.00% so far")
+    expect(page).to have_content("0.00% total success")
   end
   
   it 'should be able to mark consecutive days' do
@@ -36,7 +38,8 @@ describe 'Tracking' do
         visit pages_profile_path
         click_on 'Yes'
         value =  ActiveSupport::NumberHelper.number_to_percentage(((i+1) / ENV['NUMBER_OF_DAYS'].to_f * 100.0).round(2), precision: 2)
-        expect(page).to have_content("admire your 100.00% so far or #{value} total success")
+        expect(page).to have_content("100.00% so far")
+        expect(page).to have_content("#{value} total success")
       end
     end
   end

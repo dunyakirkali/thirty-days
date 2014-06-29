@@ -1,1 +1,11 @@
-script data-gittip-username="dunyakirkali" data-gittip-widget="button" src="//gttp.co/v1.js"
+.row
+  .columns.small-6.small-push-3
+    dl.accordion data-accordion=true
+      dd.accordion-navigation
+        a href="#tip" ?
+        #tip.content
+          a target="_blank" href="https://www.gittip.com/dunyakirkali/" tip
+          br
+          = link_to "Sign out", destroy_user_session_path, method: :delete
+          br
+          = link_to 'reset', plans_reset_path if current_user.has_plan?

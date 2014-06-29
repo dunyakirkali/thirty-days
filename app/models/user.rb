@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
   def today
-    self.progress[days_since]
+    self.progress[days_since - 1]
   end
 
   def success_percentage_so_far

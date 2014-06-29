@@ -5,15 +5,12 @@
 .row
   .columns.small-12
     p.progress-details
-      | admire your 
-      span.label
+      span.label.success
         = number_to_percentage(current_user.success_percentage_so_far, precision: 2)
       |  so far or 
-      span.label
+      span.label.alert
         = number_to_percentage(current_user.success_percentage, precision: 2)
-      |  total success or 
-      = link_to 'reset', plans_reset_path, class: 'label alert'
-      |  your goal
+      |  total success
 .row
   .columns.small-12
     div.panel#savedPlanText
@@ -22,6 +19,6 @@
   .columns.small-12.small-centered.medium-6.medium-centered
     ul.button-group.even-2
       li
-        = link_to 'No', '/plans/fail', class: "yesnoButtons alert button", disabled: (current_user.today == 'f')
+        = link_to 'No', '/plans/fail', class: "yesnoButtons alert button"
       li
-        = link_to 'Yes', '/plans/success', class: "yesnoButtons button success", disabled: (current_user.today == 't')
+        = link_to 'Yes', '/plans/success', class: "yesnoButtons button success"

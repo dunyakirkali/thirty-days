@@ -57,9 +57,9 @@ $body-font-family: "DISLECTIKA-NavidNuur";
 
 // We use these as default colors throughout
 $primary-color: $third-color;
-// $secondary-color: #e7e7e7;
-$alert-color: scale-color($fifth-color, $lightness: 35%);
-$success-color: scale-color($first-color, $lightness: 35%);
+$secondary-color: $third-color;
+$alert-color: $fifth-color;
+$success-color: $second-color;
 // $warning-color: scale-color($fifth-color, $lightness: 35%);
 // $info-color: #a0d3e8;
 
@@ -222,7 +222,7 @@ $header-font-color: $fifth-color;
 // $include-html-accordion-classes: $include-html-classes;
 
 // $accordion-navigation-padding: rem-calc(16);
-// $accordion-navigation-bg-color: #efefef  ;
+$accordion-navigation-bg-color: $second-color;
 // $accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%);
 // $accordion-navigation-active-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -3%);
 // $accordion-navigation-font-color: #222;
