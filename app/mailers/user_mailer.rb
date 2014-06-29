@@ -3,6 +3,6 @@ class UserMailer < ActionMailer::Base
  
   def reminder_email(user)
     @user = user  
-    mail(to: @user.email, subject: '30 Days: Did you do what you should do?')
+    mail(to: @user.email, subject: 'Did you do what you should do?')
   end
 end
