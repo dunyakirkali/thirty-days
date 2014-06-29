@@ -27,14 +27,13 @@ describe 'Tracking' do
   end
   
   it 'should be able to mark consecutive days' do
-    pending
     user = FactoryGirl.create(:user, :with_plan)
     visit new_user_session_path
     fill_in 'user_email', with: user.email
     fill_in 'user_password', with: user.password
     click_on 'Sign in'
     
-    [*0..9].each do |i|
+    [*1..30].each do |i|
       Timecop.freeze(DateTime.now + i.days) do
         visit pages_profile_path
         click_on 'Yes'

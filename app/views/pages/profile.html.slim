@@ -1,6 +1,9 @@
 .row
   .columns.small-12.medium-8.medium-push-2
     - if current_user.has_plan?
-      = render 'with_plan'
+		  - if current_user.completed_plan?
+			  = render 'completed_plan'
+		  - else
+				= render 'with_plan'
     - else
       = render 'without_plan'

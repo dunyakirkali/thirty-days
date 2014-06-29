@@ -14,5 +14,11 @@ FactoryGirl.define do
       plan nil
       progress nil
     end
+    
+    trait :with_a_completed_plan do
+      plan { Faker::Lorem.paragraph }
+      began_at { DateTime.now - 31.days }
+      progress Array.new(30, true)
+    end
   end
 end

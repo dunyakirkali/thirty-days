@@ -1,0 +1,12 @@
+.row
+  .columns.small-12
+    h1 Congratulations
+
+.row
+  .columns.small-12
+    p.panel#savedPlanText
+      = current_user.plan
+
+.row
+  .columns.small-12
+    p= link_to 'reset', plans_reset_path, class: 'label alert'
