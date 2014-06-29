@@ -31,7 +31,7 @@ describe 'Tracking' do
     fill_in 'user_password', with: user.password
     click_on 'Sign in'
     
-    [*0..28].each do |i|
+    [*0..29].each do |i|
       Timecop.freeze(DateTime.now + i.days) do
         visit pages_profile_path
         click_on 'Yes'
