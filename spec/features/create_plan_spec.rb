@@ -14,6 +14,6 @@ describe "Plan" do
     fill_in 'plan', with: 'My plan is that ...'
     click_on 'OK'
   
-    expect(page).to have_content('0 days since')
+    expect(page).to have_content('reset')
   end
 end

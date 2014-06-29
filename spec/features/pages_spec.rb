@@ -35,12 +35,6 @@ describe 'Pages' do
         fill_in 'user_password', with: @user.password
         click_on 'Sign in'
       end
-      
-      it 'should show number of Days' do
-        visit pages_profile_path
-        
-        expect(page).to have_content('0 days since')
-      end
 
       it 'should show a saved plan text' do
         visit pages_profile_path
