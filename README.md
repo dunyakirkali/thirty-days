@@ -2,6 +2,10 @@
 [staging](http://thirty-days-web.herokuapp.com/)
 ![tests](https://magnum-ci.com/status/209ad2835c10685d1325103544e4cb8b.png)
 
+## Configuration
+
+- NUMBER_OF_DAYS=30
+
 ## Tasks
 ``` foreman run rake users:remind ```
 
