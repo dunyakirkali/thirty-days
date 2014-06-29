@@ -93,7 +93,6 @@ Rails.application.configure do
   
   GA.tracker = "UA-17049541-17"
   
-  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   config.assets.precompile += %w(*.otf)
 end
