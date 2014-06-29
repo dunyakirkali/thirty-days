@@ -1,10 +1,7 @@
 .row
   .columns.small-12
     h2.progress-header
-      = current_user.days_since
-      |  days since
-      br
-      = current_user.began_at.strftime("%B %d, %Y")
+      = render 'progress'
 .row
   .columns.small-12
     p.progress-details
