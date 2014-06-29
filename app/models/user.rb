@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   end
   
   def completed_plan?
-    days_since > 30
+    days_since > ENV['NUMBER_OF_DAYS'].to_i
   end
   
   def start(plan)
