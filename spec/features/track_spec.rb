@@ -9,7 +9,7 @@ describe 'Tracking' do
     click_on 'Sign in'
     click_on 'Yes'
     
-    expect(page).to have_content("0.000% success")
+    expect(page).to have_content("admire your 100.00% so far or 3.33% total success")
   end
   
   it 'should be possible to mark today negative' do
@@ -19,11 +19,9 @@ describe 'Tracking' do
     fill_in 'user_password', with: user.password
     click_on 'Sign in'
     click_on 'Yes'
-    expect(page).to have_content("100.000% success")
-    
     click_on 'No'
     
-    expect(page).to have_content("0.000% success")
+    expect(page).to have_content("admire your 0.00% so far or 0.00% total success")
   end
   
   it 'should be able to mark consecutive days' do
@@ -33,12 +31,12 @@ describe 'Tracking' do
     fill_in 'user_password', with: user.password
     click_on 'Sign in'
     
-    [*1..30].each do |i|
+    [*0..28].each do |i|
       Timecop.freeze(DateTime.now + i.days) do
         visit pages_profile_path
         click_on 'Yes'
-        
-        expect(page).to have_content("100.000% success")
+        value =  ActiveSupport::NumberHelper.number_to_percentage(((i+1) / ENV['NUMBER_OF_DAYS'].to_f * 100.0).round(2), precision: 2)
+        expect(page).to have_content("admire your 100.00% so far or #{value} total success")
       end
     end
   end

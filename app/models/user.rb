@@ -5,13 +5,13 @@ class User < ActiveRecord::Base
   def today
     self.progress[days_since]
   end
-  
+
+  def success_percentage_so_far
+    successfull_days.to_f / days_since * 100.0
+  end
+    
   def success_percentage
-    if days_since == 0
-      successfull_days.to_f * 100.0
-    else
-      successfull_days.to_f / days_since * 100.0
-    end
+    successfull_days.to_f / ENV['NUMBER_OF_DAYS'].to_i * 100.0
   end
   
   def send_reminder
@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   end
   
   def completed_plan?
-    days_since > ENV['NUMBER_OF_DAYS'].to_i
+    days_since >= ENV['NUMBER_OF_DAYS'].to_i
   end
   
   def start(plan)
@@ -47,18 +47,18 @@ class User < ActiveRecord::Base
   
   def mark_success
     self.progress_will_change!
-    self.progress[days_since] = 't'
+    self.progress[days_since - 1] = 't'
     self.save
   end
   
   def mark_fail
     self.progress_will_change!
-    self.progress[days_since] = 'f'
+    self.progress[days_since - 1] = 'f'
     self.save
   end
   
   def days_since
-    (DateTime.now - began_at.to_date).to_i
+    (DateTime.now - began_at.to_date).to_i + 1
   end
   
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)

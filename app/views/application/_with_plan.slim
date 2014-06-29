@@ -5,10 +5,13 @@
 .row
   .columns.small-12
     p.progress-details
-      | admire your
+      | admire your 
       span.label
-        = number_to_percentage(current_user.success_percentage)
-      |  success or 
+        = number_to_percentage(current_user.success_percentage_so_far, precision: 2)
+      |  so far or 
+      span.label
+        = number_to_percentage(current_user.success_percentage, precision: 2)
+      |  total success or 
       = link_to 'reset', plans_reset_path, class: 'label alert'
       |  your goal
 .row

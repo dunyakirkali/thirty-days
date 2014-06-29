@@ -46,7 +46,7 @@ describe 'User' do
     it 'should calculate days since' do
       user = FactoryGirl.create(:user, :with_plan, began_at: 2.days.ago)
       
-      expect(user.days_since).to eq(2)
+      expect(user.days_since).to eq(3)
     end
   end
   
