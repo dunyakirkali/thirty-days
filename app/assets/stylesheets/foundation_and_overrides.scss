@@ -41,8 +41,8 @@ $rem-base: 10px;
 // $total-columns: 12;
 
 // We use these to control various global styles
-$body-bg: $second-color;
-$body-font-color: $fifth-color;
+// $body-bg: $second-color;
+$body-font-color: $first-color;
 $body-font-family: "DISLECTIKA-NavidNuur";
 // $body-font-weight: normal;
 // $body-font-style: normal;
@@ -56,10 +56,10 @@ $body-font-family: "DISLECTIKA-NavidNuur";
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: $third-color;
+$primary-color: $second-color;
 $secondary-color: $third-color;
-$alert-color: $fifth-color;
-$success-color: $second-color;
+$alert-color: $fourth-color;
+$success-color: $fifth-color;
 // $warning-color: scale-color($fifth-color, $lightness: 35%);
 // $info-color: #a0d3e8;
 
