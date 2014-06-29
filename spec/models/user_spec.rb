@@ -2,16 +2,32 @@ require 'rails_helper'
 
 describe 'User' do
   
-  it 'should not have a plan if project plan is nil' do
-    user = FactoryGirl.create(:user, :without_plan)
+  describe 'has_plan?' do
+    it 'should be false if project plan is nil' do
+      user = FactoryGirl.create(:user, :without_plan)
     
-    expect(user.has_plan?).to eq(false)
+      expect(user.has_plan?).to eq(false)
+    end
+  
+    it 'should be true if project plan is not nil' do
+      user = FactoryGirl.create(:user, :with_plan)
+    
+      expect(user.has_plan?).to eq(true)
+    end
   end
   
-  it 'should not have a plan if project plan is nil' do
-    user = FactoryGirl.create(:user, :with_plan)
+  describe 'completed_plan?' do
+    it 'should be false if it hasn not been 30 days yet' do
+      user = FactoryGirl.create(:user, :with_plan)
     
-    expect(user.has_plan?).to eq(true)
+      expect(user.completed_plan?).to eq(false)
+    end
+  
+    it 'should be true if it has been 30 days' do
+      user = FactoryGirl.create(:user, :with_a_completed_plan)
+    
+      expect(user.completed_plan?).to eq(true)
+    end
   end
   
   describe 'progress' do
