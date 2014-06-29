@@ -49,4 +49,18 @@ describe 'User' do
       expect(user.days_since).to eq(2)
     end
   end
+  
+  describe 'send_reminder' do
+    it 'should send reminder email if user has not completed plan' do
+      user = FactoryGirl.create(:user, :with_plan)
+    
+      expect { user.send_reminder }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    end
+    
+    it 'should not send reminder email if user has completed plan' do
+      user = FactoryGirl.create(:user, :with_a_completed_plan)
+    
+      expect { user.send_reminder }.to change { ActionMailer::Base.deliveries.count }.by(0)
+    end
+  end
 end
