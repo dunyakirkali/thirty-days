@@ -1,6 +1,6 @@
 .row
   .columns.small-12.medium-8.medium-push-2
-    h1#logoText 30 Days 
+    h1#logoText= t('site.title', number_of_days: ENV['NUMBER_OF_DAYS'])
 .row
   .columns.small-12.medium-8.medium-push-2
     p.introText 
