@@ -5,6 +5,5 @@
 .row
   .columns.small-12
     = form_tag '/plans/start' do
-      = label_tag 'plan'
-      = text_field_tag 'plan', "Tell us your plan...", class: 'planTextField'
+      = text_area_tag 'plan', "Tell us your plan...", class: 'planTextField'
       = submit_tag 'OK', id: 'submitButton', class: 'button success'
