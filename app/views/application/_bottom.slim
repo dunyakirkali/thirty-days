@@ -4,3 +4,6 @@
       = link_to "Sign out", destroy_user_session_path, class: 'button', method: :delete
     - else
       = link_to "Sign in", user_omniauth_authorize_path(:google_oauth2), class: 'button sign-up-button'
+.row
+  .columns.small-12
+	  = render 'gittip'
