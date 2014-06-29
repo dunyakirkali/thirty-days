@@ -20,6 +20,7 @@ gem 'omniauth-google-oauth2'
 gem 'google-analytics-rails'
 gem 'foreman'
 gem 'newrelic_rpm'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'

@@ -16,8 +16,8 @@
       |  your goal
 .row
   .columns.small-12
-    p.panel#savedPlanText
-      = current_user.plan
+    div.panel#savedPlanText
+      = markdown(current_user.plan)
 .row
   .columns.small-12.small-centered.medium-6.medium-centered
     ul.button-group.even-2
